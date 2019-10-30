@@ -49,8 +49,26 @@ bool belongsChar(char pChar){
     }
 }
 
-bool belongsInt(int pInt){
-
+bool belongsInt(int pNumero){
+    int primo,divisores;
+    if(pNumero!=0){
+        // el numero es valido comprobar si es primo
+        primo=0;
+        divisores=2;
+        while(divisores<pNumero  && primo!=1){
+            if(pNumero%divisores==0) primo=1;
+            divisores++;
+        }
+        // Si primo vale 0 es que el numero es primo
+        if (primo==0){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }else{
+        return false;
+    }
 }
 
 bool belongsBool(bool pBool){

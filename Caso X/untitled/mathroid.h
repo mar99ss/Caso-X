@@ -17,16 +17,12 @@ typedef struct Mathroid{
 //bool....ni idea
 
 bool belongsString(char* pString){
-
     char *ptr, *rev;
-
     ptr =pString;
-
     while (*ptr != '\0') {
         ++ptr;
     }
     --ptr;
-
     for (rev = pString; ptr >= rev;) {
         if (*ptr == *rev) {
             --ptr;
@@ -37,17 +33,27 @@ bool belongsString(char* pString){
     }
 
     if (rev > ptr)
-        printf("String is Palindrome");
+        return true;
     else
-        printf("String is not a Palindrome");
+        return false;
 }
 bool belongsChar(char pChar){
-
+    if((pChar >= 'a' && pChar <= 'z') ||
+               (pChar >= 'A' && pChar <= 'Z') ||
+            (pChar >= '0' && pChar <= '9')){
+        printf("YAS");
+        return true;
+    }
+    else{
+        return false;
+    }
 }
-bool belongsBool(bool pBool){
 
-}
 bool belongsInt(int pInt){
+
+}
+
+bool belongsBool(bool pBool){
 
 }
 

@@ -10,7 +10,8 @@
 
 int main (){
 
-    belongsString("na");
+    belongsString("ana");
+    belongsChar('q');
     //printf("what the hell");
 //    list (int, S);
 //    memset (&S, 0, sizeof (S));

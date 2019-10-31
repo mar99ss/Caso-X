@@ -5,49 +5,6 @@
 #include <assert.h>
 #include <ctype.h>
 #include"mathroid.h"
-bool intersection(Mathroid array[] ){
-    list (typeof(array[0].S), H);
-    memset (&H, 0, sizeof (H));
-    H= array[0].I;
-    list (typeof(array[0].S), Intersection);
-    memset (&Intersection, 0, sizeof (Intersection));
-    #pragma omp parallel
-    {
-        #pragma omp parallel for
-        list_each(H,value) {
-            bool isValue = false;
-            #pragma omp parallel for
-            for (int i=1;i<2;i++) {
-                #pragma omp parallel for
-                list_each(array[i].I,element2){
-                  if ((typeof(array[0].S)) value==(typeof(array[0].S)) element2) { //Compare the elements
-                    isValue = true;
-                    break;
-                    }
-                }
-            }
-            if (isValue){
-                list_push (Intersection, value);
-           }
-        }
-   }
-    list_each(Intersection,value){
-        printf ("%d ", value);
-    }
-}
-int main (){
-
-    list (int, S);
-    list (int, I);
-    memset (&S, 0, sizeof (S));
-    memset (&I, 0, sizeof (I));
-    assert (list_length (S) == 0);
-    list_push (S, 1);
-    list_push (S, 2);
-    list_push (I, 3);
-    list_push (I, 5);
-    list_push (I, 6);
-
 void Resultado(Mathroid matroids[],int largo){
     printf("entro");
 #pragma omp parallel
@@ -69,7 +26,6 @@ void Resultado(Mathroid matroids[],int largo){
     }
    }
 }
-
 bool intersection(Mathroid array[] ){
     list (typeof(array[0].S), H);
     memset (&H, 0, sizeof (H));
@@ -78,14 +34,15 @@ bool intersection(Mathroid array[] ){
     memset (&Intersection, 0, sizeof (Intersection));
     #pragma omp parallel
     {
+        #pragma omp parallel for
         list_each(H,value) {
             bool isValue = false;
             #pragma omp parallel for
             for (int i=1;i<2;i++) {
+                #pragma omp parallel for
                 list_each(array[i].I,element2){
                   if ((typeof(array[0].S)) value==(typeof(array[0].S)) element2) { //Compare the elements
                     isValue = true;
-                    printf ("%s ", "YAS");
                     break;
                     }
                 }

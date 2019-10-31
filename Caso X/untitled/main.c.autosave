@@ -17,8 +17,7 @@ bool intersection(Mathroid array[] ){
             for (int i=1;i<2;i++) {
                 list_each(array[i].I,element2){
                   if ((typeof(array[0].S)) value==(typeof(array[0].S)) element2) { //Compare the elements
-                    isValue = true;
-                    printf ("%s ", "YAS");
+                    isValue = true; 
                     break;
                     }
                 }

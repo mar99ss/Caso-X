@@ -8,6 +8,7 @@
 #include"mathroid.h"
 
 
+
 void Resultado(Mathroid matroids[],int largo){
     printf("entro");
 #pragma omp parallel
@@ -15,16 +16,13 @@ void Resultado(Mathroid matroids[],int largo){
     #pragma omp parallel for
     for (int i=0;i<largo;i++) {
         list_each(matroids[i].I,value) {
-           if(isalpha(value)!=0){
-               printf("char\n");
-                printf ("%s ", value);
-           }else if(isdigit(value)!=0){
-               printf("digit\n");
-               printf ("%f ", value);
-           }else{
-               printf("cual\n");
-               printf ("%d ", value);
-           }
+            if(isalpha((char)value)!=0){
+                printf ("%c ", value);
+            }else if(isdigit((char)value)!=0){
+                printf ("%f ", value);
+            }else{
+                printf ("%d ", value);
+            }
         }
     }
    }
@@ -74,9 +72,9 @@ int main (){
     memset (&I2, 0, sizeof (I2));
     list (char*, S2);
     memset (&S2, 0, sizeof (S2));
-    list_push (S2, "ana");
-    list_push (S2, "qwef");
-    list_push (S2, "grwrg");
+    list_push (S2, true);
+    list_push (S2, false);
+    list_push (S2, false);
 
     list (char*, I3);
     memset (&I3, 0, sizeof (I3));
@@ -116,7 +114,7 @@ int main (){
     list_push (S7, 23);
 
     Mathroid matroid1={.S=S, .I=I, .function=belongsInt};
-    Mathroid matroid2={.S=S2,.I=I2,.function=belongsString};
+    Mathroid matroid2={.S=S2,.I=I2,.function=belongsBool};
     Mathroid matroid3={.S=S3,.I=I3,.function=belongsChar};
     Mathroid matroid4={.S=S4, .I=I4, .function=belongsInt};
     Mathroid matroid5={.S=S5, .I=I5, .function=belongsInt};
@@ -134,13 +132,14 @@ int main (){
     mat[0]=matroid1;
     mat[1]=matroid2;
     mat[2]=matroid3;
-
+    int largo= (int)sizeof(mat)/sizeof (mat[0]);
+    Resultado(mat,largo);
     list_each(mat[0].I,value) {
         printf("%d",value);
     }
     printf("\n");
     list_each(mat[1].I,value) {
-        printf("%s",value);
+        printf("%d",value);
     }
     printf("\n");
     list_each(mat[2].I,value) {

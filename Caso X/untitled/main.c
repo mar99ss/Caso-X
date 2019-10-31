@@ -11,14 +11,15 @@ bool intersection(Mathroid array[] ){
     memset (&Intersection, 0, sizeof (Intersection));
     #pragma omp parallel
     {
+        #pragma omp parallel for
         list_each(H,value) {
             bool isValue = false;
             #pragma omp parallel for
             for (int i=1;i<2;i++) {
+                #pragma omp parallel for
                 list_each(array[i].I,element2){
                   if ((typeof(array[0].S)) value==(typeof(array[0].S)) element2) { //Compare the elements
                     isValue = true;
-                    printf ("%s ", "YAS");
                     break;
                     }
                 }
@@ -36,7 +37,6 @@ int main (){
 
     belongsString("ana");
     belongsChar('q');
-    //printf("what the hell");
     list (int, S);
     list (int, I);
     memset (&S, 0, sizeof (S));

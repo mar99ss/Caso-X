@@ -41,7 +41,6 @@ bool belongsChar(char pChar){
     if((pChar >= 'a' && pChar <= 'z') ||
                (pChar >= 'A' && pChar <= 'Z') ||
             (pChar >= '0' && pChar <= '9')){
-        printf("YAS");
         return true;
     }
     else{

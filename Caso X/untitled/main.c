@@ -6,7 +6,6 @@
 #include <ctype.h>
 #include"mathroid.h"
 void Resultado(Mathroid matroids[],int largo){
-    printf("entro");
 #pragma omp parallel
 {
     #pragma omp parallel for
@@ -130,10 +129,10 @@ int main (){
     mat[0]=matroid1;
     mat[1]=matroid2;
     mat[2]=matroid3;
-
-    printf ("%s ", "Resultado matroid: ");
-    int largo= (int)sizeof(mat)/sizeof (mat[0]);
+    int largo= (int)(sizeof(mat)/sizeof (mat[0]));
     Resultado(mat,largo);
+    printf ("%s ", "Resultado matroid: ");
+
     printf("\n");
     list_each(mat[0].I,value) {
         printf("%d",value);

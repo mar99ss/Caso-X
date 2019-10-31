@@ -35,8 +35,6 @@ bool intersection(Mathroid array[] ){
 }
 int main (){
 
-    belongsString("ana");
-    belongsChar('q');
     list (int, S);
     list (int, I);
     memset (&S, 0, sizeof (S));
@@ -62,7 +60,7 @@ int main (){
     Mathroid array[10];
     Mathroid n={.S=S, .I=I, .function=belongsInt};
 
-    Mathroid m ={.S=asd, .I=I2, .function= belongsChar};
+    Mathroid m ={.S=asd, .I=I2, .function= belongsInt};
     array[0]= n;
     array[1]= m;
 

@@ -100,7 +100,8 @@ compiler_clean:
 
 ####### Compile
 
-debug/main.o: ../untitled/main.c 
+debug/main.o: ../untitled/main.c ../untitled/mathroid.h \
+		../untitled/linkdlst.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o debug/main.o ../untitled/main.c
 
 ####### Install

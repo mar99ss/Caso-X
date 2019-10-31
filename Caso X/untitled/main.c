@@ -52,6 +52,8 @@ bool intersection(Mathroid array[] ){
            }
         }
    }
+    printf ("\n");
+    printf ("%s ", "Intersection: ");
     list_each(Intersection,value){
         printf ("%d ", value);
     }
@@ -132,19 +134,24 @@ int main (){
     mat[1]=matroid2;
     mat[2]=matroid3;
 
+    printf ("%s ", "Resultado matroid: ");
     list_each(mat[0].I,value) {
         printf("%d",value);
     }
     printf("\n");
+    printf ("\n");
+    printf ("%s ", "Resultado matroid: ");
     list_each(mat[1].I,value) {
         printf("%s",value);
     }
     printf("\n");
+    printf ("\n");
+    printf ("%s ", "Resultado matroid: ");
     list_each(mat[2].I,value) {
         printf("%c",value);
     }
-
-    Mathroid array[10];
+   printf ("\n");
+    Mathroid array[5];
 
 
     array[0]= matroid1;

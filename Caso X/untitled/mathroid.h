@@ -15,7 +15,6 @@ typedef struct Mathroid{
 //char si pertenece al alfabeto o a numeros del 0 al 9
 //int si es primo
 //bool....ni idea
-
 bool belongsString(char* pString){
     char *ptr, *rev;
     ptr =pString;
@@ -51,7 +50,6 @@ bool belongsChar(char pChar){
 bool belongsInt(int pNumero){
     int primo,divisores;
     if(pNumero!=0){
-        // el numero es valido comprobar si es primo
         primo=0;
         divisores=2;
         while(divisores<pNumero  && primo!=1){
@@ -60,7 +58,6 @@ bool belongsInt(int pNumero){
         }
         // Si primo vale 0 es que el numero es primo
         if (primo==0){
-            printf("yes");
             return true;
         }
         else{
@@ -72,7 +69,23 @@ bool belongsInt(int pNumero){
 }
 
 bool belongsBool(bool pBool){
-
+    if(pBool ==true){
+        return true;
+    }else{
+        return false;
+    }
+}
+Mathroid insert(Mathroid mat ){
+    #pragma omp parallel
+    {
+        #pragma omp parallel for
+        list_each(mat.S,value) {
+            if(mat.function(value)){
+                list_push (mat.I, value);
+            }
+        }
+    }
+    return  mat;
 }
 
 #endif // MATHROID_H

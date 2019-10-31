@@ -12,6 +12,7 @@ int main (){
 
     belongsString("ana");
     belongsChar('q');
+    belongsInt(7);
     //printf("what the hell");
 //    list (int, S);
 //    memset (&S, 0, sizeof (S));
@@ -32,8 +33,8 @@ int main (){
 //     }
 
 //    Mathroid array[10];
-//    Mathroid n;
-//    n.S=S;
+    Mathroid n;
+    n.function(7);
 
 //    Mathroid m;
 //    printf("llegue");

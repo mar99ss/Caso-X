@@ -73,7 +73,7 @@ bool belongsInt(int pNumero){
 }
 
 bool belongsBool(bool pBool){
-
+    
 }
 
 #endif // MATHROID_H
